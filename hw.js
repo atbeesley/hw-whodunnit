@@ -1,194 +1,213 @@
-#### Episode 1
+// // Episode 1
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Library',
+//   weapon: 'Rope'
+// };
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${scenario.murderer}.`;
+// }
+//
+// // logs 'Miss Scarlet'
+//
+//
+// const verdict = declareMurderer();
+// console.log(verdict);
+
+// // logs 'Miss Scarlet' - correct :)
+//
+// // Episode 2
+//
+// const murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mrs. Peacock';
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+
+// logs 'The murderer is Professor Plum'
+
+
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
+
+// logs 'The murderer is Professor Plum' - wrong, it errors.
+
+
+// Episode 3
+
+// let murderer = 'Professor Plum';
+//
+// const declareMurderer = function() {
+//   let murderer = 'Mrs. Peacock';
+//   return `The murderer is ${murderer}.`;
+// }
+//
+//
+// const firstVerdict = declareMurderer();
+// console.log('First Verdict: ', firstVerdict);
+//
+// // logs 'The murderer is Mrs. Peacock' - correct!
+//
+// const secondVerdict = `The murderer is ${murderer}.`;
+// console.log('Second Verdict: ', secondVerdict);
+
+// logs 'The murderer is Professor Plum' - correct!
 
 
 
-```js
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Library',
-  weapon: 'Rope'
-};
 
-const declareMurderer = function() {
-  return `The murderer is ${scenario.murderer}.`;
-}
+// Episode 4
 
-const verdict = declareMurderer();
-console.log(verdict);
-```
+// let suspectOne = 'Miss Scarlet';
+// let suspectTwo = 'Professor Plum';
+// let suspectThree = 'Mrs. Peacock';
+//
+// const declareAllSuspects = function() {
+//   let suspectThree = 'Colonel Mustard';
+//   return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+// }
+//
+// // logs `The suspects are Miss Scarlet, Professor Plum, Colonel Mustard`. - correct :)
+//
+//
+// const suspects = declareAllSuspects();
+// console.log(suspects);
+// console.log(`Suspect three is ${suspectThree}.`);
 
-// logs 
+// logs `Suspect three is Mrs. Peacock`. correct :)
 
-#### Episode 2
 
-```js
-const murderer = 'Professor Plum';
 
-const changeMurderer = function() {
-  murderer = 'Mrs. Peacock';
-}
 
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
+// Episode 5
+//
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Kitchen',
+//   weapon: 'Candle Stick'
+// };
+//
+// const changeWeapon = function(newWeapon) {
+//   scenario.weapon = newWeapon;
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is the ${scenario.weapon}.`;
+// }
+//
+// // logs `The weapon is the Candle Stick.`
+//
+// changeWeapon('Revolver');
+// const verdict = declareWeapon();
+// console.log(verdict);
 
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
-```
+// throws an error since a const variable cannot be reassigned. incorrect -> The weapon is the Revolver.
+//
+// Episode 6
 
-#### Episode 3
+// let murderer = 'Colonel Mustard';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     murderer = 'Mrs. White';
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function () {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// // logs `The murderer is Mr. Green`. OR is there an error? Who knows...
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 
-```js
-let murderer = 'Professor Plum';
+// logs `The murderer is Mr. Green`. OR is there an error? Who knows... nope, Mrs White
 
-const declareMurderer = function() {
-  let murderer = 'Mrs. Peacock';
-  return `The murderer is ${murderer}.`;
-}
 
-const firstVerdict = declareMurderer();
-console.log('First Verdict: ', firstVerdict);
 
-const secondVerdict = `The murderer is ${murderer}.`;
-console.log('Second Verdict: ', secondVerdict);
-```
+// Episode 7
 
-#### Episode 4
+// let murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     let murderer = 'Colonel Mustard';
+//
+//     const unexpectedOutcome = function() {
+//       murderer = 'Miss Scarlet';
+//     }
+//
+//     unexpectedOutcome();
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
+// logs `The murderer is Mr Green` - correct :)
 
-```js
-let suspectOne = 'Miss Scarlet';
-let suspectTwo = 'Professor Plum';
-let suspectThree = 'Mrs. Peacock';
+// Episode 8
 
-const declareAllSuspects = function() {
-  let suspectThree = 'Colonel Mustard';
-  return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
-}
+// const scenario = {
+//   murderer: 'Mrs. Peacock',
+//   room: 'Conservatory',
+//   weapon: 'Lead Pipe'
+// };
+//
+// const changeScenario = function() {
+//   scenario.murderer = 'Mrs. Peacock';
+//   scenario.room = 'Dining Room';
+//
+//   const plotTwist = function(room) {
+//     if (scenario.room === room) {
+//       scenario.murderer = 'Colonel Mustard';
+//     }
+//
+//     const unexpectedOutcome = function(murderer) {
+//       if (scenario.murderer === murderer) {
+//         scenario.weapon = 'Candle Stick';
+//       }
+//     }
+//
+//     unexpectedOutcome('Colonel Mustard');
+//   }
+//
+//   plotTwist('Dining Room');
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is ${scenario.weapon}.`
+// }
+//
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
 
-const suspects = declareAllSuspects();
-console.log(suspects);
-console.log(`Suspect three is ${suspectThree}.`);
-```
+// logs 'The weapon is Candle Stick.'
 
-#### Episode 5
+// #### Episode 9
 
-```js
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Kitchen',
-  weapon: 'Candle Stick'
-};
 
-const changeWeapon = function(newWeapon) {
-  scenario.weapon = newWeapon;
-}
-
-const declareWeapon = function() {
-  return `The weapon is the ${scenario.weapon}.`;
-}
-
-changeWeapon('Revolver');
-const verdict = declareWeapon();
-console.log(verdict);
-```
-
-#### Episode 6
-
-```js
-let murderer = 'Colonel Mustard';
-
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
-
-  const plotTwist = function() {
-    murderer = 'Mrs. White';
-  }
-
-  plotTwist();
-}
-
-const declareMurderer = function () {
-  return `The murderer is ${murderer}.`;
-}
-
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
-```
-
-#### Episode 7
-
-```js
-let murderer = 'Professor Plum';
-
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
-
-  const plotTwist = function() {
-    let murderer = 'Colonel Mustard';
-
-    const unexpectedOutcome = function() {
-      murderer = 'Miss Scarlet';
-    }
-
-    unexpectedOutcome();
-  }
-
-  plotTwist();
-}
-
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
-
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
-```
-
-#### Episode 8
-
-```js
-const scenario = {
-  murderer: 'Mrs. Peacock',
-  room: 'Conservatory',
-  weapon: 'Lead Pipe'
-};
-
-const changeScenario = function() {
-  scenario.murderer = 'Mrs. Peacock';
-  scenario.room = 'Dining Room';
-
-  const plotTwist = function(room) {
-    if (scenario.room === room) {
-      scenario.murderer = 'Colonel Mustard';
-    }
-
-    const unexpectedOutcome = function(murderer) {
-      if (scenario.murderer === murderer) {
-        scenario.weapon = 'Candle Stick';
-      }
-    }
-
-    unexpectedOutcome('Colonel Mustard');
-  }
-
-  plotTwist('Dining Room');
-}
-
-const declareWeapon = function() {
-  return `The weapon is ${scenario.weapon}.`
-}
-
-changeScenario();
-const verdict = declareWeapon();
-console.log(verdict);
-```
-
-#### Episode 9
-
-```js
 let murderer = 'Professor Plum';
 
 if (murderer === 'Professor Plum') {
@@ -201,3 +220,5 @@ const declareMurderer = function() {
 
 const verdict = declareMurderer();
 console.log(verdict);
+
+// logs 'The murderer is Mrs. Peacock' - whoops, it was Prof Plum.
